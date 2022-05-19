@@ -1,0 +1,2 @@
+class DiaryBlog < ApplicationRecord
+end
