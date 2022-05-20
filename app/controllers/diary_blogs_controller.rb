@@ -22,4 +22,5 @@ class DiaryBlogsController < ApplicationController
   def blog_parameter
     params.require(:diary_blog).permit(:title, :content, :start_time)
   end
+
 end

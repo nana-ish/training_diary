@@ -6,7 +6,6 @@
       <%= link_to blog.title, blog %>
     <% end %>
   <% end %>
-
 <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     日記を投稿する
@@ -35,3 +34,6 @@
     </div>
   </div>
 </div>
+<% @blogs.each do |blog|%>
+<%= blog.title %>
+<% end %>
