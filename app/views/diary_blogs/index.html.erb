@@ -1,11 +1,14 @@
 <div class= "container">
   <div class="mt-5">
-  <%= month_calendar events: @blogs do |date, blogs| %>
+  <%= month_calendar(events: @blogs) do |date, blogs| %>
     <%= date.day %>
     <% blogs.each do |blog| %>
-      <%= link_to blog.title, blog %>
+      <div>
+        <%= link_to blog.title,diary_blog_path(blog) %>
+      </div>
     <% end %>
   <% end %>
+
 <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     日記を投稿する
@@ -21,11 +24,11 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= form_with(model: @blog, local: true) do |f| %>
+          <%= form_with model: @blog, url:diary_blogs_path, local: true do |f| %>
             <%= f.date_field :start_time ,class: "form_control my-2"%><br>
             <%= f.text_field :title ,class: "form_control my-2" ,placeholder: "タイトル"%>
             <%= f.text_area :content ,autocomplete: "introduction",:size =>"30x10",class: "form_control my-2",placeholder: "詳細" %><br>
-            <%= f.submit "登録する" ,class: "btn btn-primary"%>
+            <%= f.submit "登録する" ,class: "btn btn-primary" %>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <% end %>
         </div>
@@ -34,6 +37,9 @@
     </div>
   </div>
 </div>
+<p>test</p>
+<%#= @blogs %>
 <% @blogs.each do |blog|%>
 <%= blog.title %>
 <% end %>
+<p>test</p>
