@@ -1,45 +1,21 @@
 <div class= "container">
-  <div class="mt-5">
-  <%= month_calendar(events: @blogs) do |date, blogs| %>
-    <%= date.day %>
-    <% blogs.each do |blog| %>
-      <div>
-        <%= link_to blog.title,diary_blog_path(blog) %>
-      </div>
-    <% end %>
-  <% end %>
-
-<!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    日記を投稿する
-    </button>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= form_with model: @blog, url:diary_blogs_path, local: true do |f| %>
-            <%= f.date_field :start_time ,class: "form_control my-2"%><br>
-            <%= f.text_field :title ,class: "form_control my-2" ,placeholder: "タイトル"%>
-            <%= f.text_area :content ,autocomplete: "introduction",:size =>"30x10",class: "form_control my-2",placeholder: "詳細" %><br>
-            <%= f.submit "登録する" ,class: "btn btn-primary" %>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <% end %>
-        </div>
-      </div>
+  <div class="row mt-5">
+    <div class="col-md-3">
+      <%= form_with model: @carender ,url:calendars_path_path, local:true do |f| %>
+        <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいdiary名" %>
+        <%= f.label :color ,"テーマカラー"%>
+        <%= f.color_field:color ,placeholder: "新しいdiaryの作成"%><br>
+        <%= f.submit '作成する' %>
+      <% end %>
     </div>
+    <div class="col-md-9">
+      <%= month_calendar(events: @blogs) do |date, blogs| %>
+        <%= date.day %>
+        <% blogs.each do |blog| %>
+          <div><%= link_to blog.title,diary_blog_path(blog) %></div>
+        <% end %>
+      <% end %>
     </div>
+  <%= render partial: 'diary_form', locals:{blog: @blog} %>
   </div>
 </div>
-<p>test</p>
-<%#= @blogs %>
-<% @blogs.each do |blog|%>
-<%= blog.title %>
-<% end %>
-<p>test</p>

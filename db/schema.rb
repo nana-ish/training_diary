@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_19_093428) do
+ActiveRecord::Schema.define(version: 2022_05_22_062844) do
+
+  create_table "carenders", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "diary_blogs", force: :cascade do |t|
     t.string "title"

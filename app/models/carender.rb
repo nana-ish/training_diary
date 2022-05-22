@@ -1,0 +1,2 @@
+class Carender < ApplicationRecord
+end
