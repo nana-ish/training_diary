@@ -1,9 +1,10 @@
 <div class= "container">
   <div class="row mt-5">
     <div class="col-md-3">
-      <%= form_with model: @carender ,url:calendars_path_path, local:true do |f| %>
+      <p class="text-left h4">calendar_room</p>
+      <%= form_with model: @carender ,url:calendars_path, local:true do |f| %>
         <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいdiary名" %>
-        <%= f.label :color ,"テーマカラー"%>
+        <%= f.label :color ,"テーマカラー" %>
         <%= f.color_field:color ,placeholder: "新しいdiaryの作成"%><br>
         <%= f.submit '作成する' %>
       <% end %>
