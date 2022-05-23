@@ -4,6 +4,8 @@ class DiaryBlogsController < ApplicationController
   def index
     @blog = DiaryBlog.new
     @blogs = DiaryBlog.all
+    @calendar = Calendar.new
+    @calendars = Calendar.all
     # binding.pry
   end
 

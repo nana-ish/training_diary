@@ -1,2 +1,0 @@
-class Carender < ApplicationRecord
-end

@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_22_062844) do
+ActiveRecord::Schema.define(version: 2022_05_23_110710) do
 
-  create_table "carenders", force: :cascade do |t|
+  create_table "calendars", force: :cascade do |t|
     t.string "name"
     t.string "color"
     t.datetime "created_at", precision: 6, null: false

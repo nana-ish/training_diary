@@ -2,12 +2,10 @@
   <div class="row mt-5">
     <div class="col-md-3">
       <p class="text-left h4">calendar_room</p>
-      <%= form_with model: @carender ,url:calendars_path, local:true do |f| %>
-        <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいdiary名" %>
-        <%= f.label :color ,"テーマカラー" %>
-        <%= f.color_field:color ,placeholder: "新しいdiaryの作成"%><br>
-        <%= f.submit '作成する' %>
+      <% @calendars.each do |calendar|%>
+        <%= link_to calendar.name %><br>
       <% end %>
+      <%= render partial: 'calendar_form', locals:{calendar: @calendar} %>
     </div>
     <div class="col-md-9">
       <%= month_calendar(events: @blogs) do |date, blogs| %>
