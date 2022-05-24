@@ -1,9 +1,9 @@
 <div class= "container">
   <div class="row mt-5">
     <div class="col-md-3">
-      <p class="text-left h4">calendar_room</p>
+      <p class="text-left h4 calendar_room">calendar_room</p>
       <% @calendars.each do |calendar|%>
-        <%= link_to calendar.name ,class: "btn btn-primary" %>
+        <%= link_to calendar.name, calendar_path(calendar), class: "btn btn-primary calendar-#{calendar.color}" %>
         <%= link_to "削除",calendar_path(calendar), class: "mx-3",
           method: :delete, "data-confirm" => "本当に削除しますか？" %><br>
       <% end %>
