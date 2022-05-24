@@ -20,8 +20,6 @@ class CalendarsController < ApplicationController
     else
       redirect_to request.referer, notice: "削除に失敗しました。"
     end
-
-
   end
 
 

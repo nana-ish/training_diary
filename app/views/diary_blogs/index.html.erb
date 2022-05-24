@@ -3,9 +3,16 @@
     <div class="col-md-3">
       <p class="text-left h4">calendar_room</p>
       <% @calendars.each do |calendar|%>
-        <%= link_to calendar.name %><br>
+        <%= link_to calendar.name ,class: "btn btn-primary" %>
+        <%= link_to "削除",calendar_path(calendar), class: "mx-3",
+          method: :delete, "data-confirm" => "本当に削除しますか？" %><br>
       <% end %>
-      <%= render partial: 'calendar_form', locals:{calendar: @calendar} %>
+     <%= form_with model: @calendar ,url:calendars_path, local:true do |f| %>
+        <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいカレンダー名" %><br>
+        <%= f.label :color ,"テーマカラー" %>
+        <%= f.select :color,["red","blue","green","orange","grey"]%>
+        <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success"%>
+     <% end %>
     </div>
     <div class="col-md-9">
       <%= month_calendar(events: @blogs) do |date, blogs| %>
@@ -14,7 +21,7 @@
           <div><%= link_to blog.title,diary_blog_path(blog) %></div>
         <% end %>
       <% end %>
+      <%= render partial: 'diary_form', locals:{blog: @blog} %>
     </div>
-  <%= render partial: 'diary_form', locals:{blog: @blog} %>
   </div>
 </div>
