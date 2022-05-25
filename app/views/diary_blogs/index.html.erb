@@ -1,18 +1,18 @@
 <div class= "container">
   <div class="row mt-5">
-    <div class="col-md-3">
-      <p class="text-left h4 calendar_room">calendar_room</p>
+    <div class="col-md-3 calendar_room">
+      <p class="text-left h4">calendar_room</p>
       <% @calendars.each do |calendar|%>
-        <%= link_to calendar.name, calendar_path(calendar), class: "btn btn-primary calendar-#{calendar.color}" %>
+        <%= link_to calendar.name, calendars_path, class: "#{calendar.color}" %>
         <%= link_to "削除",calendar_path(calendar), class: "mx-3",
-          method: :delete, "data-confirm" => "本当に削除しますか？" %><br>
+          method: :delete, "data-confirm" => "本当に削除しますか？"%><br>
       <% end %>
-     <%= form_with model: @calendar ,url:calendars_path, local:true do |f| %>
+      <%= form_with model: @calendar ,url:calendars_path, local:true do |f| %>
         <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいカレンダー名" %><br>
         <%= f.label :color ,"テーマカラー" %>
         <%= f.select :color,["red","blue","green","orange","grey"]%>
         <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success"%>
-     <% end %>
+      <% end %>
     </div>
     <div class="col-md-9">
       <%= month_calendar(events: @blogs) do |date, blogs| %>

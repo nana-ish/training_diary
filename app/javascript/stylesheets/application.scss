@@ -1,13 +1,62 @@
 @import '~bootstrap/scss/bootstrap';
 
-.calendar_room {
-  .red {
-    color: red;
-  }  
-}
-
-.calendar_content {
-  .red {
-    font-size: 12px;
+.calendar_room{
+  .red{
+  display       : inline-block;
+  border-radius : 10%;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 5px 5px;   /* 余白       */
+  margin        : 3px 0px;
+  background    : #ff0000;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  border        : 2px solid #ffffe0;    /* 枠の指定 */
   }
+  .blue{
+  display       : inline-block;
+  border-radius : 10%;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 5px 5px;   /* 余白       */
+  margin        : 3px 0px;
+  background    : #0000ff;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  border        : 2px solid #ffffe0;    /* 枠の指定 */
+  }
+  .green{
+  display       : inline-block;
+  border-radius : 10%;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 5px 5px;   /* 余白       */
+  margin        : 3px 0px;
+  background    : #32cd32;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  border        : 2px solid #ffffe0;    /* 枠の指定 */
+  }
+  .orange{
+  display       : inline-block;
+  border-radius : 10%;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 5px 5px;   /* 余白       */
+  margin        : 3px 0px;
+  background    : #ff8c00;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  border        : 2px solid #ffffe0;    /* 枠の指定 */
+  }
+
+  .grey{
+  display       : inline-block;
+  border-radius : 10%;          /* 角丸       */
+  font-size     : 12pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  padding       : 5px 5px;   /* 余白       */
+  margin        : 3px 0px;
+  background    : #696969;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  border        : 2px solid #ffffe0;    /* 枠の指定 */
+  }
+
+
 }
