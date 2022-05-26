@@ -4,6 +4,7 @@ class CreateDiaryBlogs < ActiveRecord::Migration[6.1]
       t.string :title
       t.text :content
       t.datetime :start_time
+      t.integer :calendar_id
 
       t.timestamps
     end

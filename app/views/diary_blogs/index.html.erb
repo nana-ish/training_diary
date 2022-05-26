@@ -21,7 +21,7 @@
           <div><%= link_to blog.title,diary_blog_path(blog) %></div>
         <% end %>
       <% end %>
-      <%= render partial: 'diary_form', locals:{blog: @blog} %>
+      <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
     </div>
   </div>
 </div>

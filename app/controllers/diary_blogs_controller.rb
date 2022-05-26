@@ -11,6 +11,7 @@ class DiaryBlogsController < ApplicationController
 
   def create
     @blog = DiaryBlog.new(blog_parameter)
+    @blog.calendar_id = Calendar.find_by(name: params[:diary_blog][:calendar_id]).id
     @blog.save
     redirect_to request.referer
   end
