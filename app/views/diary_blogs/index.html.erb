@@ -14,11 +14,11 @@
         <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success"%>
       <% end %>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 calendar_room">
       <%= month_calendar(events: @blogs) do |date, blogs| %>
         <%= date.day %>
         <% blogs.each do |blog| %>
-          <div><%= link_to blog.title,diary_blog_path(blog) %></div>
+          <div><%= link_to blog.title,diary_blog_path(blog),class: "#{blog.calendar.color}"%></div>
         <% end %>
       <% end %>
       <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
