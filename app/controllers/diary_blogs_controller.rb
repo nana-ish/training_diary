@@ -1,5 +1,12 @@
 class DiaryBlogsController < ApplicationController
 
+  def show
+    @blog = DiaryBlog.new
+    @blogs = DiaryBlog.all
+    @calendar = Calendar.new
+    @calendars = Calendar.all
+    # binding.pry
+  end
 
   def index
     @blog = DiaryBlog.new
@@ -14,9 +21,6 @@ class DiaryBlogsController < ApplicationController
     @blog.calendar_id = Calendar.find_by(name: params[:diary_blog][:calendar_id]).id
     @blog.save
     redirect_to request.referer
-  end
-
-  def show
   end
 
   private

@@ -1,0 +1,27 @@
+<div class= "container">
+  <div class="row mt-5">
+    <div class="col-md-3 calendar_room">
+      <p class="text-left h4">calendar_room</p>
+      <% @calendars.each do |calendar|%>
+        <%= link_to calendar.name, calendars_path, class: "#{calendar.color}" %>
+        <%= link_to "削除",calendar_path(calendar), class: "mx-3",
+          method: :delete, "data-confirm" => "本当に削除しますか？"%><br>
+      <% end %>
+      <%= form_with model: @calendar ,url:calendars_path, local:true do |f| %>
+        <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいカレンダー名" %><br>
+        <%= f.label :color ,"テーマカラー" %>
+        <%= f.select :color,["red","blue","green","orange","grey"]%>
+        <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success"%>
+      <% end %>
+    </div>
+    <div class="col-md-9 calendar_room">
+      <%= month_calendar(events: @blogs) do |date, blogs| %>
+        <%= date.day %>
+        <% blogs.each do |blog| %>
+          <div><%= link_to blog.title,diary_blog_path(blog), class: "#{blog.calendar.color}" %></div>
+        <% end %>
+      <% end %>
+      <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
+    </div>
+  </div>
+</div>
