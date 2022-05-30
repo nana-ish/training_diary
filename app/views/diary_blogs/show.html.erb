@@ -27,10 +27,10 @@
       <% end %>
       <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
     </div>
-    <div class="col-md-3 calendar_room">
-      <%= @diary_blog.start_time %>
-      <%= @diary_blog.title %>
-      <%= @diary_blog.content %>
+    <div class="col-md-3 text-center calendar_room">
+      <p><%= @diary_blog.start_time.strftime("%Y年%m月%d日")%></p>
+      <p><%= @diary_blog.title %></p>
+      <p class ="text-break"><%= @diary_blog.content %></p>
     </div>
   </div>
 </div>
