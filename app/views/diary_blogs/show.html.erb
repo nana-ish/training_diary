@@ -13,8 +13,12 @@
         <%= f.select :color,["red","blue","green","orange","grey"]%>
         <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success"%>
       <% end %>
+      <!-- Modalページへのリンク --><!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      日記を投稿する
+    </button>
     </div>
-    <div class="col-md-9 calendar_room">
+    <div class="col-md-6 calendar_room">
       <%= month_calendar(events: @blogs) do |date, blogs| %>
         <%= date.day %>
         <% blogs.each do |blog| %>
@@ -22,6 +26,11 @@
         <% end %>
       <% end %>
       <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
+    </div>
+    <div class="col-md-3 calendar_room">
+      <%= @diary_blog.start_time %>
+      <%= @diary_blog.title %>
+      <%= @diary_blog.content %>
     </div>
   </div>
 </div>

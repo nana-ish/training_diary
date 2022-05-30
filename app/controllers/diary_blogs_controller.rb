@@ -5,6 +5,7 @@ class DiaryBlogsController < ApplicationController
     @blogs = DiaryBlog.all
     @calendar = Calendar.new
     @calendars = Calendar.all
+    @diary_blog = DiaryBlog.find(params[:id])
     # binding.pry
   end
 
