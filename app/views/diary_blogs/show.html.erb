@@ -11,10 +11,10 @@
         <%= f.text_field :name ,class: "form_control my-2" ,placeholder: "新しいカレンダー名" %><br>
         <%= f.label :color ,"テーマカラー" %>
         <%= f.select :color,["red","blue","green","orange","grey"]%>
-        <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success"%>
+        <br><%= f.submit '新しいカレンダーを作成する',class:"btn btn-sm btn-success mt-3"%>
       <% end %>
       <!-- Modalページへのリンク --><!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-sm btn-primary mt-3" data-toggle="modal" data-target="#exampleModal">
       日記を投稿する
     </button>
     </div>
