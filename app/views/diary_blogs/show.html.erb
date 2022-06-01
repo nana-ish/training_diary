@@ -18,7 +18,7 @@
       日記を投稿する
     </button>
     </div>
-    <div class="col-md-6 calendar_room">
+    <div class="col-md-9 calendar_room">
       <%= month_calendar(events: @blogs) do |date, blogs| %>
         <%= date.day %>
         <% blogs.each do |blog| %>
@@ -26,11 +26,11 @@
         <% end %>
       <% end %>
       <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
-    </div>
-    <div class="col-md-3 text-center calendar_room">
-      <p><%= @diary_blog.start_time.strftime("%Y年%m月%d日")%></p>
-      <p><%= @diary_blog.title %></p>
-      <p class ="text-break"><%= @diary_blog.content %></p>
+      <div class="calendar_room">
+        <p><%= @diary_blog.start_time.strftime("%Y年%m月%d日")%></p>
+        <p><%= @diary_blog.title %></p>
+        <p class ="text-break"><%= @diary_blog.content %></p>
+      </div>
     </div>
   </div>
 </div>
