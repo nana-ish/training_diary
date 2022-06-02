@@ -27,8 +27,10 @@
       <% end %>
       <%= render partial: 'diary_form', locals:{blog: @blog ,calendar: @calendars} %>
       <div class="calendar_room">
-        <p><%= @diary_blog.start_time.strftime("%Y年%m月%d日")%></p>
-        <p><%= @diary_blog.title %></p>
+        <p>
+          <span><%= @diary_blog.start_time.strftime("%Y年%m月%d日")%></span>
+          <span class= "mx-2 font-weight-bold"><%= @diary_blog.title %></span>
+        </p>
         <p class ="text-break"><%= @diary_blog.content %></p>
       </div>
     </div>
