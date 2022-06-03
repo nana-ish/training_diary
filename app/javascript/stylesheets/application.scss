@@ -3,7 +3,7 @@
 .calendar_room{
   .red{
   display       : inline-block;
-  border-radius : 10%;          /* 角丸       */
+  border-radius : 0%;          /* 角丸       */
   font-size     : 12pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   padding       : 5px 5px;   /* 余白       */
@@ -14,7 +14,7 @@
   }
   .blue{
   display       : inline-block;
-  border-radius : 10%;          /* 角丸       */
+  border-radius : 0%;          /* 角丸       */
   font-size     : 12pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   padding       : 5px 5px;   /* 余白       */
@@ -25,7 +25,7 @@
   }
   .green{
   display       : inline-block;
-  border-radius : 10%;          /* 角丸       */
+  border-radius : 0%;          /* 角丸       */
   font-size     : 12pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   padding       : 5px 5px;   /* 余白       */
@@ -48,7 +48,7 @@
 
   .grey{
   display       : inline-block;
-  border-radius : 10%;          /* 角丸       */
+  border-radius : 0%;          /* 角丸       */
   font-size     : 12pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   padding       : 5px 5px;   /* 余白       */
