@@ -1,24 +1,37 @@
 # README
+# Training_diary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+アスリートや社員が毎日の成長記録をつけるためのアプリケーション
 
-* Ruby version
+### サイトテーマ
 
-* System dependencies
+アスリートや、社員が日々のトレーニングや業務を振り返るため。
 
-* Configuration
+### テーマを選んだ理由
 
-* Database creation
+過去を効率よく振り返れるアプリケーションがほしいと考えたかたら。
 
-* Database initialization
+### ターゲットユーザ
 
-* How to run the test suite
+過去の自分と比較して、客観的に成長したことを感じたい人
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+トレーニング記録や、業務日誌として利用することを目的とする。
+過去と同じようなトレーニングや業務をおこなった際、
+過去にやった時はどんな感想を持ったのか知りたくなった時を主な利用シーンとして考えています。
 
-* ...
+
+## 開発環境
+
+- OS：Amazon Linux2
+- 言語：HTML,CSS,JavaScript,Ruby(ver.2.6.3),SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+
+
